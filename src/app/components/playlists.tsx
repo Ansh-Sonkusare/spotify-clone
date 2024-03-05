@@ -1,12 +1,11 @@
 import { FunctionComponent } from "react";
-import Player from "./player";
 
 interface PlaylistsProps {}
 
 const Playlists: FunctionComponent<PlaylistsProps> = () => {
   const list = new Array(14).fill("");
   return (
-    <div className="overflow-y-auto  flex gap-y-2 flex-col scrollbar-thumb-slate-300 scrollbar-thin h-full mx-2">
+    <div className="overflow-y-scroll  flex flex-col scrollbar-thumb-slate-300 scrollbar-thumb-rounded-lg scrollbar-thin h-full ">
       {list.map((idx) => (
         <Playlist key={idx} />
       ))}{" "}
@@ -17,7 +16,7 @@ interface PlaylistProps {}
 
 export const Playlist: FunctionComponent<PlaylistProps> = () => {
   return (
-    <div className="flex gap-x-2  items-center ">
+    <div className="flex gap-x-2  items-center hover:bg-neutral-400/5 p-2 rounded-md  mr-1">
       <div className="w-12 h-12 rounded-sm bg-slate-300"></div>
       <div className="flex flex-col gap-y-1/3">
         <p className="text-white text-sm font-medium tracking-wide">

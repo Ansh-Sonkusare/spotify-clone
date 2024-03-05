@@ -8,7 +8,7 @@ interface SidebarProps {}
 
 const Sidebar: FunctionComponent<SidebarProps> = () => {
   return (
-    <div className="grid grid-flow-row grid-rows-7 h-[91.2vh] ml-2 gap-y-2 py-2">
+    <div className="grid grid-flow-row grid-rows-7 h-[91.2vh] ml-2 gap-y-2 py-2 ">
       <Box className="row-span-1 flex flex-col justify-center">
         <Link
           href={"/"}

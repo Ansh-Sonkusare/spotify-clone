@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { PiBell } from "react-icons/pi";
 import "./globals.css";
 import Player from "./components/player";
 import Sidebar from "./components/ui/sidebar";
@@ -18,14 +19,38 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="bg-black">
         <div className="h-screen grid grid-flow-row grid-rows-10 gap-1">
           <div className="bg-black row-start-1 row-end-10 grid grid-cols-9 gap-2">
             <div className="col-start-1 col-end-3">
               <Sidebar />
             </div>
-            <div className="col-start-3 col-end-10 bg-neutral-900 my-2 rounded-lg">
-              {children}
+            <div className="col-start-3 col-end-10 bg-neutral-900 my-2 rounded-xl blur-xs h-[89.4vh] overflow-y-scroll">
+              <div className="w-full ">
+                <div className="flex gap-2  justify-between sticky top-0 items-center py-3 px-4 bg-neutral-900">
+                  <div className="flex gap-2 ">
+                    <div>
+                      <IoIosArrowBack
+                        className="bg-black text-white rounded-full p-1 flex justify-center items-center"
+                        size={28}
+                      />
+                    </div>
+                    <div>
+                      <IoIosArrowForward
+                        size={28}
+                        className="bg-black text-white rounded-full p-1 flex justify-center items-center "
+                      />
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <div className="bg-black text-white rounded-full p-2 flex justify-center items-center w-9 h-9">
+                      <PiBell size={20} />
+                    </div>
+                    <div className="bg-black text-white rounded-full p-2 flex justify-center items-center w-9 h-9"></div>
+                  </div>
+                </div>
+                {children}
+              </div>
             </div>
           </div>
           <Player className="row-span-1 row-start-10 row-end-10" />
