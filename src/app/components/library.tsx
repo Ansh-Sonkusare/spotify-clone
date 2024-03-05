@@ -8,8 +8,8 @@ interface LibraryProps {}
 
 const Library: FunctionComponent<LibraryProps> = () => {
   return (
-    <div className="flex flex-col h-[70%] rounded-lg py-2 gap-y-1 ">
-      <div className="flex flex-row h-auto items-center justify-between w-full  text-md text-white py-3  px-6">
+    <div className="flex flex-col h-full rounded-lg  gap-y-1 ml-2">
+      <div className="flex flex-row h-auto items-center justify-between w-full  text-md text-white py-3  px-2">
         <Link href="/" className="">
           <div className="flex flex-row items-center gap-x-3">
             <BiLibrary size={36} />
@@ -20,7 +20,7 @@ const Library: FunctionComponent<LibraryProps> = () => {
         </Link>
         <BiPlus size={24} className="text-gray-400" />
       </div>
-      <div className="flex px-3">
+      <div className="flex px-1">
         <div className="rounded-2xl text-white bg-zinc-800 px-3 py-1 mx-1 text-sm">
           Playlists
         </div>

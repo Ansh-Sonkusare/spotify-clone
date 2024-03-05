@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Player from "./components/player";
 import Sidebar from "./components/ui/sidebar";
+import Library from "./components/library";
+import Box from "./components/box";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,12 +19,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <div className="h-[100vh] grid grid-flow-row grid-rows-9 gap-1 bg-black ">
-          <div className="row-span-8 bg-slate-700 grid grid-cols-9 gap-2 py-2">
-            <Sidebar />
-            <div className="col-span-5 rounded-lg">{children}</div>
+        <div className="h-screen grid grid-flow-row grid-rows-10 gap-1">
+          <div className="bg-black row-start-1 row-end-10 grid grid-cols-9 gap-2">
+            <div className="col-start-1 col-end-3">
+              <Sidebar />
+            </div>
+            <div className="col-start-3 col-end-10 bg-neutral-900 my-2 rounded-lg">
+              {children}
+            </div>
           </div>
-          <Player />
+          <Player className="row-span-1 row-start-10 row-end-10" />
         </div>
       </body>
     </html>

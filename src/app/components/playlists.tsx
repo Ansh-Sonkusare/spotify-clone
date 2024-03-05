@@ -4,29 +4,20 @@ import Player from "./player";
 interface PlaylistsProps {}
 
 const Playlists: FunctionComponent<PlaylistsProps> = () => {
-  const list = new Array(10).fill("");
+  const list = new Array(14).fill("");
   return (
-    <div className="overflow-y-auto h-full mx-2">
-      {/* {list.map((idx) => (
+    <div className="overflow-y-auto  flex gap-y-2 flex-col scrollbar-thumb-slate-300 scrollbar-thin h-full mx-2">
+      {list.map((idx) => (
         <Playlist key={idx} />
-      ))} */}
-      <div className="h-16 w-full bg-yellow-50 "></div>
-      <div className="h-16 w-full bg-yellow-50 "></div>
-      <div className="h-16 w-full bg-yellow-50 "></div>{" "}
-      <div className="h-16 w-full bg-yellow-50 "></div>
-      <div className="h-16 w-full bg-yellow-50 "></div>
-      <div className="h-16 w-full bg-yellow-50 "></div>{" "}
-      <div className="h-16 w-full bg-yellow-50 "></div>
-      <div className="h-16 w-full bg-yellow-50 "></div>
-      <div className="h-16 w-full bg-yellow-50 "></div>
+      ))}{" "}
     </div>
   );
 };
 interface PlaylistProps {}
 
-const Playlist: FunctionComponent<PlaylistProps> = () => {
+export const Playlist: FunctionComponent<PlaylistProps> = () => {
   return (
-    <div className="flex gap-x-2 my-1 items-center ">
+    <div className="flex gap-x-2  items-center ">
       <div className="w-12 h-12 rounded-sm bg-slate-300"></div>
       <div className="flex flex-col gap-y-1/3">
         <p className="text-white text-sm font-medium tracking-wide">

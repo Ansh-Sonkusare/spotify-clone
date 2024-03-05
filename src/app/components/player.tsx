@@ -1,10 +1,20 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, HTMLAttributes } from "react";
+import { cn } from "../libs/utils";
+import { Playlist } from "./playlists";
 
-interface PlayerProps {}
+type PlayerProps = HTMLAttributes<HTMLDivElement>;
 
-const Player: FunctionComponent<PlayerProps> = () => {
+const Player: FunctionComponent<PlayerProps> = ({ className }) => {
   return (
-    <div className=" bg-blue-100 w-full row-span-1 bottom-0 relative"></div>
+    <div
+      className={cn(
+        "bg-black w-full row-span-1 bottom-0 relative flex items-center justify-between px-4",
+        className
+      )}
+    >
+      <Playlist />
+      <div className="flex"></div>
+    </div>
   );
 };
 

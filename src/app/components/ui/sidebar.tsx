@@ -8,8 +8,8 @@ interface SidebarProps {}
 
 const Sidebar: FunctionComponent<SidebarProps> = () => {
   return (
-    <div className="flex flex-col gap-y-2 col-span-2 row-span-5 ml-2 h-full bg-slate-500">
-      {/* <Box>
+    <div className="grid grid-flow-row grid-rows-7 h-[91.2vh] ml-2 gap-y-2 py-2">
+      <Box className="row-span-1 flex flex-col justify-center">
         <Link
           href={"/"}
           className={`flex flex-row h-auto items-center w-full gap-x-4 text-md text-white py-3 ml-6`}
@@ -26,9 +26,11 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
             Search
           </p>
         </Link>
-      </Box> */}
+      </Box>
 
-      <Library />
+      <div className="h-[full] bg-neutral-900 rounded-lg row-span-6">
+        <Library />
+      </div>
     </div>
   );
 };
