@@ -10,7 +10,7 @@ export const PlaylistCards: FunctionComponent<PlaylistCards> = ({
       <h1 className="text-white font-bold pt-4 text-2xl">
         Made for TeakMirror
       </h1>
-      <div className="grid grid-flow-row gap-x-7 gap-y-4 grid-cols-7 pt-2 ">
+      <div className="grid grid-flow-row gap-x-7 gap-y-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  2xl:grid-cols-6 pt-2 ">
         <Card />
         <Card />
         <Card />

@@ -21,7 +21,7 @@ interface AlbumProps {}
 export const Album: FunctionComponent<AlbumProps> = () => {
   return (
     <div className="flex gap-x-2  items-center bg-white/5 hover:bg-white/15 transition duration-150 cursor-pointer rounded-md">
-      <div className="w-16 h-16 rounded-sm bg-slate-300"></div>
+      <div className="w-16 h-16 rounded-l-sm bg-slate-300"></div>
       <div className="flex flex-col gap-y-1/3 ">
         <p className="text-white text-sm font-medium tracking-wide">
           Blossoms of Spring
