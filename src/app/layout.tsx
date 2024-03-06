@@ -4,8 +4,11 @@ import { PiBell } from "react-icons/pi";
 import "./globals.css";
 import Player from "./components/player";
 import Sidebar from "./components/ui/sidebar";
-import Library from "./components/library";
-import Box from "./components/box";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/app/components/ui/resizable";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,11 +24,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-black">
         <div className="h-screen grid grid-flow-row grid-rows-10 gap-1">
-          <div className="bg-black row-start-1 row-end-10 grid grid-cols-9 gap-2">
-            <div className="col-start-1 col-end-3">
+          {/* <div className="bg-black row-start-1 row-end-10   grid grid-cols-6 xl:grid-cols-9 gap-2 ">
+            <div className="col-span-2 xl:col-span-2">
               <Sidebar />
             </div>
-            <div className="col-start-3 col-end-10 bg-neutral-900 my-2 rounded-xl blur-xs h-[89.4vh] overflow-y-scroll">
+            <div className="col-span-4 xl:col-span-7 bg-neutral-900 my-2 rounded-xl blur-xs h-[89.4vh] overflow-y-scroll">
               <div className="w-full ">
                 <div className="flex gap-2  justify-between sticky top-0 items-center py-3 px-4 bg-neutral-900">
                   <div className="flex gap-2 ">
@@ -52,7 +55,47 @@ export default function RootLayout({
                 {children}
               </div>
             </div>
-          </div>
+          </div> */}
+          <ResizablePanelGroup
+            direction="horizontal"
+            className="w-full h-[89.4vh]  row-start-1 row-end-10 rounded-lg gap-2 "
+          >
+            <ResizablePanel defaultSize={25}>
+              <div className="">
+                <Sidebar />
+              </div>
+            </ResizablePanel>
+            <ResizableHandle />
+            <ResizablePanel defaultSize={75}>
+              <div className="col-span-4 xl:col-span-7 bg-neutral-900 my-2 rounded-xl blur-xs h-[89.4vh] overflow-y-scroll">
+                <div className="w-full ">
+                  <div className="flex gap-2  justify-between sticky top-0 items-center py-3 px-4 bg-neutral-900">
+                    <div className="flex gap-2 ">
+                      <div>
+                        <IoIosArrowBack
+                          className="bg-black text-white rounded-full p-1 flex justify-center items-center"
+                          size={28}
+                        />
+                      </div>
+                      <div>
+                        <IoIosArrowForward
+                          size={28}
+                          className="bg-black text-white rounded-full p-1 flex justify-center items-center "
+                        />
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="bg-black text-white rounded-full p-2 flex justify-center items-center w-9 h-9">
+                        <PiBell size={20} />
+                      </div>
+                      <div className="bg-black text-white rounded-full p-2 flex justify-center items-center w-9 h-9"></div>
+                    </div>
+                  </div>
+                  {children}
+                </div>
+              </div>
+            </ResizablePanel>
+          </ResizablePanelGroup>
           <Player className="row-span-1 row-start-10 row-end-10" />
         </div>
       </body>
